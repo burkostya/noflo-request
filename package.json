@@ -1,6 +1,6 @@
 {
   "name": "noflo-request",
-  "description": "NoFlo components for requests",
+  "description": "NoFlo components for http requests",
   "version": "0.0.0",
   "author": {
     "name": "Konstantin Burykin",
