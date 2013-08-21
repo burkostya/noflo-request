@@ -1,4 +1,4 @@
-# noflo-request [![Build Status](https://secure.travis-ci.org/revers/noflo-request.png?branch=master)](http://travis-ci.org/revers/noflo-request)
+# noflo-request [![Build Status](https://secure.travis-ci.org/burkostya/noflo-request.png?branch=master)](http://travis-ci.org/burkostya/noflo-request)
 
 ## Components
 
