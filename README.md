@@ -9,7 +9,7 @@ It's all around [superagent](http://visionmedia.github.io/superagent/)
 
 ### MakeRequest
 
-Creates `request` (_superagents_'s `request`) object
+Creates `request` ( _superagents's_ `request` ) object
 
 #### In ports
 
@@ -24,7 +24,7 @@ Creates `request` (_superagents_'s `request`) object
 
 #### In ports
 
-- REQUEST: `request` (maybe also nodejs's http.ClientRequest) object
+- REQUEST: `request` (can be also nodejs's http.ClientRequest) object
 
 #### Out ports
 
