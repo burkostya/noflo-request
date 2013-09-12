@@ -1,0 +1,25 @@
+{
+  "name": "noflo-request",
+  "description": "NoFlo components for http requests",
+  "author": "Konstantin Burykin <burkostya@gmail.com>",
+  "repo": "burkostya/noflo-request",
+  "version": "0.0.0",
+  "keywords": [
+  ],
+  "dependencies": {
+    "noflo/noflo": "*",
+    "visionmedia/superagent": "*"
+  },
+  "scripts": [
+    "components/MakeRequest.coffee",
+    "index.js"
+  ],
+  "json": [
+    "component.json"
+  ],
+  "noflo": {
+    "components": {
+      "MakeRequest": "components/MakeRequest.coffee"
+    }
+  }
+}
