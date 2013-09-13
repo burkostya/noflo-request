@@ -18,17 +18,17 @@ Creates `request` ( _superagents's_ `request` ) object
 
 #### Out ports
 
-- REQUEST: `request` object
+- OUT: `request` object
 
 ### SendRequest
 
 #### In ports
 
-- REQUEST: `request` object
+- IN: `request` object
 
 #### Out ports
 
-- RESPONSE: `response` object
+- OUT: `response` object
 - ERROR: error
 
 ### SetRequestHeader
