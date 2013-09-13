@@ -24,7 +24,7 @@ Creates `request` ( _superagents's_ `request` ) object
 
 #### In ports
 
-- REQUEST: `request` (can be also nodejs's http.ClientRequest) object
+- REQUEST: `request` object
 
 #### Out ports
 
