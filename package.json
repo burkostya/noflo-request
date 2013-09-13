@@ -47,7 +47,8 @@
   "keywords": [],
   "noflo": {
     "components": {
-      "MakeRequest": "components/MakeRequest.coffee"
+      "MakeRequest": "components/MakeRequest.coffee",
+      "SendRequest": "components/SendRequest.coffee"
     }
   }
 }
