@@ -1,8 +1,9 @@
+chai = require 'chai' unless chai
+expect = chai.expect  if chai
+
 noflo  = require 'noflo'
 socket = noflo.internalSocket
 unless noflo.isBrowser()
-  chai = require 'chai' unless chai
-  expect = chai.expect
   MakeRequest = require '../components/MakeRequest.coffee'
 else
   MakeRequest = require 'noflo-request/components/MakeRequest.js'

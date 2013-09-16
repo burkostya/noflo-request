@@ -8,10 +8,12 @@
   ],
   "dependencies": {
     "noflo/noflo": "*",
-    "visionmedia/superagent": "*"
+    "visionmedia/superagent": "*",
+    "chaijs/chai": "*"
   },
   "scripts": [
     "components/MakeRequest.coffee",
+    "components/SendRequest.coffee",
     "index.js"
   ],
   "json": [
@@ -19,7 +21,8 @@
   ],
   "noflo": {
     "components": {
-      "MakeRequest": "components/MakeRequest.coffee"
+      "MakeRequest": "components/MakeRequest.coffee",
+      "SendRequest": "components/SendRequest.coffee"
     }
   }
 }

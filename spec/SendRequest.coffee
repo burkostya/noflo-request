@@ -1,3 +1,6 @@
+chai = require 'chai' unless chai
+expect = chai.expect  if chai
+
 http = require 'http'
 
 request = require 'superagent'
@@ -5,8 +8,6 @@ request = require 'superagent'
 noflo  = require 'noflo'
 socket = noflo.internalSocket
 unless noflo.isBrowser()
-  chai = require 'chai' unless chai
-  expect = chai.expect
   SendRequest = require '../components/SendRequest.coffee'
 else
   SendRequest = require 'noflo-request/components/SendRequest.js'
