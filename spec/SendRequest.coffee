@@ -1,8 +1,6 @@
 chai = require 'chai' unless chai
 expect = chai.expect  if chai
 
-http = require 'http'
-
 request = require 'superagent'
 
 noflo  = require 'noflo'
@@ -13,8 +11,7 @@ else
   SendRequest = require 'noflo-request/components/SendRequest.js'
 
 describe 'SendRequest component', ->
-  remotePort = 3000
-  remoteUrl  = 'http://localhost:' + remotePort
+  remoteUrl  = 'http://localhost:4000/test.html'
   requestObj = null
 
   c = null
@@ -38,16 +35,7 @@ describe 'SendRequest component', ->
     it 'should have an error port', ->
       expect(c.outPorts.error).to.be.an 'object'
   describe 'when given request object', ->
-    msg  = null
-    before (done) ->
-      msg  = '<html><head></head><body>seems to work</body></html>'
-      server = http.createServer (req, res) ->
-        res.writeHead 200,
-          'Content-Length': msg.length
-          'Content-Type':   'text/plain'
-        res.end msg
-      server.listen remotePort, () ->
-        done()
+    msg  = '<html><head></head><body>seems to work</body></html>'
     it 'should send response object to out port', (done) ->
       resSock.on 'data', (data) ->
         expect(data).to.be.an 'object'

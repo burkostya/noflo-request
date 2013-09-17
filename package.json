@@ -23,7 +23,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt cafemocha"
+    "test": "grunt test"
   },
   "dependencies": {
     "noflo": "~0.4.0",
@@ -42,7 +42,9 @@
     "grunt-contrib-watch": "~0.3.1",
     "component-json": "~0.1.4",
     "grunt-combine": "~0.8.3",
-    "grunt-component": "~0.1.2"
+    "grunt-component": "~0.1.2",
+    "noflo-test": "0.0.6",
+    "grunt-contrib-connect": "~0.5.0"
   },
   "keywords": [],
   "noflo": {

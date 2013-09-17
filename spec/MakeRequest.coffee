@@ -9,8 +9,7 @@ else
   MakeRequest = require 'noflo-request/components/MakeRequest.js'
 
 describe 'MakeRequest component', ->
-  remotePort = 3000
-  remoteUrl  = 'http://localhost:' + remotePort
+  remoteUrl  = 'http://localhost:4000/test.html'
 
   c = null
   url    = null
