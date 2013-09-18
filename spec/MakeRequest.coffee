@@ -12,21 +12,21 @@ describe 'MakeRequest component', ->
   remoteUrl  = 'http://localhost:4000/test.html'
 
   c = null
-  url    = null
+  ins    = null
   method = null
   out    = null
   beforeEach ->
     c = MakeRequest.getComponent()
-    url    = socket.createSocket()
+    ins    = socket.createSocket()
     method = socket.createSocket()
     out    = socket.createSocket()
-    c.inPorts.url.attach url
+    c.inPorts.in.attach ins
     c.inPorts.method.attach method
     c.outPorts.out.attach out
 
   describe 'when instantiated', ->
-    it 'should have an url port', ->
-      expect(c.inPorts.url).to.be.an 'object'
+    it 'should have an in port', ->
+      expect(c.inPorts.in).to.be.an 'object'
     it 'should have an method port', ->
       expect(c.inPorts.method).to.be.an 'object'
     it 'should have an output port', ->
@@ -36,17 +36,17 @@ describe 'MakeRequest component', ->
         out.on 'data', (data) ->
           expect(data).to.be.an 'object'
           done()
-        url.send remoteUrl
+        ins.send remoteUrl
     describe 'and method', ->
       it 'should send request object with specified method', (done) ->
         out.on 'data', (data) ->
           expect(data.method).to.equal 'POST'
           done()
         method.send 'POST'
-        url.send remoteUrl
+        ins.send remoteUrl
     describe 'but not method', ->
       it 'should use GET method', (done) ->
         out.on 'data', (data) ->
           expect(data.method).to.equal 'GET'
           done()
-        url.send remoteUrl
+        ins.send remoteUrl
