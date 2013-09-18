@@ -13,7 +13,7 @@ Creates `request` ( _superagents's_ `request` ) object
 
 #### In ports
 
-- URL: url
+- IN: url
 - METHOD: method (GET by default)
 
 #### Out ports
