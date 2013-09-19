@@ -54,6 +54,10 @@
     "components": {
       "MakeRequest": "components/MakeRequest.coffee",
       "SendRequest": "components/SendRequest.coffee"
+    },
+    "graphs": {
+      "SetRequestQuery": "graphs/SetRequestQuery.fbp",
+      "AbortRequest": "graphs/AbortRequest.fbp"
     }
   }
 }

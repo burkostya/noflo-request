@@ -1,0 +1,3 @@
+EXPORT=CALL.IN:IN
+
+'abort' -> METHOD Call(objects/CallMethod) OUT -> IN Drop(core/Drop)
