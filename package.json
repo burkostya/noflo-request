@@ -27,7 +27,10 @@
   },
   "dependencies": {
     "noflo": "~0.4.0",
-    "superagent": "~0.15.4"
+    "superagent": "~0.15.4",
+    "noflo-objects": "git://github.com/burkostya/noflo-objects#add-args-port-for-CallMethod",
+    "noflo-adapters": "~0.1.2",
+    "noflo-core": "~0.1.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
