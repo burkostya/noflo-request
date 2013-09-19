@@ -42,7 +42,6 @@ describe 'SetRequestQuery component', ->
   describe 'when given query and `request`', ->
     it.only 'should apply query to `request` object and send it to out port', (done) ->
         out.on 'data', (data) ->
-          console.log data
           expect(data.req.path).to.equal '/?some=query'
           done()
         query.send some: 'query'
