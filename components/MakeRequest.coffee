@@ -10,15 +10,19 @@ class MakeRequest extends Component
     @method = 'GET'
 
     @inPorts =
-      in:    new Port 'string'
+      in:     new Port 'string'
       method: new Port 'string'
     @outPorts =
       out: new Port 'object'
+
+    @inPorts.method.on 'connect', () =>
+      @method = 'GET'
 
     @inPorts.method.on 'data', (@method) =>
 
     @inPorts.in.on 'data', (url) =>
       @outPorts.out.send request(@method, url)
+      @method = 'GET'
 
     @inPorts.in.on 'disconnect', () =>
       @outPorts.out.disconnect()
