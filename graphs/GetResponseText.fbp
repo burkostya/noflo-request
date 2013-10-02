@@ -1,0 +1,4 @@
+EXPORT=GETTEXT.IN:IN
+EXPORT=GETTEXT.OUT:OUT
+
+'text' -> KEY GetText(objects/ExtractProperty)
