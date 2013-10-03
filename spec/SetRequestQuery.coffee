@@ -17,32 +17,36 @@ describe 'SetRequestQuery component', ->
   remoteUrl  = 'http://localhost:4000'
 
   c = null
-  ins   = null
-  query = null
-  out   = null
+  ins = null
+  req = null
+  out = null
   beforeEach (done) ->
     loader.load 'request/SetRequestQuery', (instance) ->
       instance.once 'ready', () ->
         c = instance
-        ins   = socket.createSocket()
-        query = socket.createSocket()
-        out   = socket.createSocket()
+        ins = socket.createSocket()
+        req = socket.createSocket()
+        out = socket.createSocket()
         c.inPorts.in.attach ins
-        c.inPorts.query.attach query
+        c.inPorts.request.attach req
         c.outPorts.out.attach out
         done()
 
   describe 'when instantiated', ->
     it 'should have an in port', ->
       expect(c.inPorts.in).to.be.an 'object'
-    it 'should have an query port', ->
-      expect(c.inPorts.query).to.be.an 'object'
+    it 'should have an request port', ->
+      expect(c.inPorts.request).to.be.an 'object'
     it 'should have an out port', ->
       expect(c.outPorts.out).to.be.an 'object'
-  describe 'when given query and `request`', ->
+  describe 'when given query and `request` object', ->
     it.only 'should apply query to `request` object and send it to out port', (done) ->
         out.on 'data', (data) ->
-          expect(data.req.path).to.equal '/?some=query'
-          done()
-        query.send some: 'query'
-        ins.send request('GET', remoteUrl)
+          console.log data.req.path
+          # expect(data.req.path).to.equal '/?some=query&as=string'
+          # done()
+        req.send request('GET', remoteUrl)
+        ins.send
+          some: 'query'
+        ins.send 'as=string'
+        ins.disconnect()

@@ -1,9 +1,10 @@
-'{"some":"data"}' -> IN ToObject(strings/ParseJson)
-ToObject() OUT -> QUERY SetQuery(request/SetRequestQuery)
-
 'http://localhost:4000' -> IN MakeRequest(request/MakeRequest)
+MakeRequest() OUT -> REQUEST SetQuery(request/SetRequestQuery)
+'[{"some":"data"}, "as=string"]' -> IN ToObject(strings/ParseJson)
+ToObject OUT -> IN ToPackets(adapters/ObjectToPackets)
 
-MakeRequest() OUT -> IN SetQuery()
+ToPackets() OUT -> IN SetQuery()
+
 SetQuery() OUT -> IN Split(core/Split)
 Split() OUT -> IN Abort(request/AbortRequest)
 Split() OUT -> IN Display(core/Output)

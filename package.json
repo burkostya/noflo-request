@@ -57,7 +57,8 @@
     },
     "graphs": {
       "SetRequestQuery": "graphs/SetRequestQuery.fbp",
-      "AbortRequest": "graphs/AbortRequest.fbp"
+      "AbortRequest": "graphs/AbortRequest.fbp",
+      "GetResponseText": "graphs/GetResponseText.fbp"
     }
   }
 }

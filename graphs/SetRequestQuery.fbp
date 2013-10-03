@@ -1,5 +1,10 @@
-EXPORT=CALL.IN:IN
-EXPORT=CALL.ARGUMENTS:QUERY
+EXPORT=SEGREGATE.IN:IN
+EXPORT=INITIATECALL.DATA:REQUEST
 EXPORT=CALL.OUT:OUT
 
 'query' -> METHOD Call(objects/CallMethod)
+Segregate(packets/SplitPacket) OUT -> IN Split(core/Split)
+Split() OUT -> ARGUMENTS Call(objects/CallMethod)
+Split() OUT -> IN InitiateCall(core/Kick)
+InitiateCall() OUT -> IN Call()
+Call() ERROR -> IN Log(core/Output)
